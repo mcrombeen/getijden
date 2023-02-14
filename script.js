@@ -15,9 +15,10 @@ fetch('Antwerpen_Februari.json')
     Object.keys(currentData).forEach(key => {
       if (key !== 'Date') {
         let value = currentData[key];
-        if (key.match('HW1'))
+        if (key.match('HW1')) {
           key == ('Eerste Hoogwater')
           value += ' hr';
+        }
         } else {
           value += ' mtr';
         }
@@ -25,7 +26,7 @@ fetch('Antwerpen_Februari.json')
         listItem.textContent = `${key}: ${value}`;
         dataElement.appendChild(listItem);
         dataElement.appendChild(document.createElement('br')); // Insert a line break after each list item
-      
+      }
     });
   })
   .catch(error => console.error(error));
