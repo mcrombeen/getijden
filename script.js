@@ -19,14 +19,14 @@ fetch('Antwerpen_Februari.json')
           key == ('Eerste Hoogwater')
           value += ' hr';
         }
-        } else {
+         else {
           value += ' mtr';
         }
         const listItem = document.createElement('li');
         listItem.textContent = `${key}: ${value}`;
         dataElement.appendChild(listItem);
         dataElement.appendChild(document.createElement('br')); // Insert a line break after each list item
-      }
+      }}
     });
   })
   .catch(error => console.error(error));
