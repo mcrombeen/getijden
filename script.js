@@ -18,6 +18,7 @@ fetch('Antwerpen_Februari.json')
         const listItem = document.createElement('li');
         listItem.textContent = `${key}: ${value}`;
         dataElement.appendChild(listItem);
+        dataElement.appendChild(document.createElement('br')); // Insert a line break after each list item
       }
     });
   })
