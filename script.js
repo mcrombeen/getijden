@@ -29,4 +29,4 @@ fetch('Antwerpen_Februari.json')
       }
     });
   
-  .catch(error => console.error(error));
+  
