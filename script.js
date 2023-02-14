@@ -1,5 +1,5 @@
 // Fetch the data from the JSON file
-fetch('data.json')
+fetch('Antwerpen_Februari.json')
   .then(response => response.json())
   .then(data => {
     // Find the current date in the data
