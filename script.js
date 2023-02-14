@@ -15,8 +15,8 @@ fetch('Antwerpen_Februari.json')
     Object.keys(currentData).forEach(key => {
       if (key !== 'Date') {
         let value = currentData[key];
-        if (key.match(/^(HW1))) {
-          key += 'Eerste Hoogwater'
+        if (key.match(/^(HW))
+          key += 'Eerste Hoogwater';
           value += ' hr';
         } else {
           value += ' mtr';
