@@ -16,7 +16,7 @@ fetch('Antwerpen_Februari.json')
       if (key !== 'Date') {
         let value = currentData[key];
         if (key.match(//^(HW1)))
-          key += 'Eerste Hoogwater';
+          key == ('Eerste Hoogwater');
           value += ' hr';
         } else {
           value += ' mtr';
