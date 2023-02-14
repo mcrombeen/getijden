@@ -16,7 +16,7 @@ fetch('Antwerpen_Februari.json')
       if (key !== 'Date') {
         const value = currentData[key];
         const listItem = document.createElement('li');
-        listItem.textContent = `${key}: ${value}${key === 'Time' ? ' h' : key === 'Meter' ? ' m' : ''}`;
+        listItem.textContent = `${key}: ${value}`;
         dataElement.appendChild(listItem);
         dataElement.appendChild(document.createElement('br')); // Insert a line break after each list item
       }
