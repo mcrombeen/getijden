@@ -14,7 +14,10 @@ fetch('Antwerpen_Februari.json')
     const dataElement = document.getElementById('data');
     Object.keys(currentData).forEach(key => {
       if (key !== 'Date') {
-        const value = currentData[key];
+        let value = currentData[key];
+        if (key.match(/^(HW|LW)\d$/)) {
+          key += ' h';
+        }
         const listItem = document.createElement('li');
         listItem.textContent = `${key}: ${value}`;
         dataElement.appendChild(listItem);
