@@ -17,6 +17,8 @@ fetch('Antwerpen_Februari.json')
         let value = currentData[key];
         if (key.match(/^(HW|LW)\d$/)) {
           value += ' hr';
+        } else {
+          value += ' mtr';
         }
         const listItem = document.createElement('li');
         listItem.textContent = `${key}: ${value}`;
