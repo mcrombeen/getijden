@@ -23,19 +23,34 @@ xhr.onload = function() {
     key = 'Eerste Hoogwater ';
     value += ' hr';
   }
-  if (key === 'HW2') {
+  else if (key === 'HW2') {
     key = 'Tweede Hoogwater ';
     value += ' hr';
   }
-  if (key === 'LW1') {
+  else if (key === 'LW1') {
     key = 'Eerste Laagwater ';
     value += ' hr';
   }
-  if (key === 'LW2') {
+  else if (key === 'LW2') {
     key = 'Tweede Laagwater ';
     value += ' hr';
   }
- 
+  else if (key === 'm TAW') {
+    key = 'M TAW ';
+    value += ' mtr';
+  }
+  else if (key === 'm TAW_1') {
+    key = 'M TAW ';
+    value += ' mtr';
+  }
+ else if (key === 'm TAW_2') {
+    key = 'M TAW ';
+    value += ' mtr';
+  }
+  else if (key === 'm TAW_3') {
+    key = 'M TAW ';
+    value += ' mtr';
+  }
   
         const listItem = document.createElement('li');
         listItem.textContent = `${key}: ${value}`;
