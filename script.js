@@ -21,6 +21,7 @@ xhr.onload = function() {
         let value = currentData[key];
         if (key === 'HW1') {
     key = 'hoogwater1';
+    value += ' hr';
   }
   if (key.match(/^(HW|LW)\d$/)) {
     value += ' hr';
