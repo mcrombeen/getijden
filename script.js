@@ -2,7 +2,7 @@
 const xhr = new XMLHttpRequest();
 
 // Set up the request
-xhr.open('GET', './Antwerpen_Februari.json');
+xhr.open('GET', 'Antwerpen_Februari.json');
 
 // Handle the response
 xhr.onload = function() {
