@@ -20,14 +20,12 @@ xhr.onload = function() {
       if (key !== 'Date') {
         let value = currentData[key];
         if (key === 'HW1') {
-    key = 'Eerste Hoogwater';
-    value += ' hr'; } 
-            else if (key === 'HW2') {
-    key = 'Tweede Hoogwater';
-    value += ' hr'; }
-           else {
-             value += ' hr'; }
-          
+            key = 'Eerste Hoogwater';
+          value += ' hr'; } 
+        if (key === 'HW2') {
+            key = 'Tweede Hoogwater';
+            value += ' hr'; }
+           
       
   }
   
@@ -35,7 +33,7 @@ xhr.onload = function() {
         listItem.textContent = `${key}: ${value}`;
         dataElement.appendChild(listItem);
         dataElement.appendChild(document.createElement('br')); // Insert a line break after each list item
-      })
+      }
     });
   } else {
     console.error('Failed to load data from Antwerpen_Februari.json');
