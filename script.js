@@ -19,13 +19,14 @@ xhr.onload = function() {
     Object.keys(currentData).forEach(key => {
       if (key !== 'Date') {
         let value = currentData[key];
-        if (key === 'HW1')
- {
-          value += ' hr';
-          key == 'hoogwater1';
-        } else {
-          value += ' mtr';
-        }
+        if (key === 'HW1') {
+    key = 'hoogwater1';
+  }
+  if (key.match(/^(HW|LW)\d$/)) {
+    value += ' hr';
+  } else {
+    value += ' mtr';
+  }
         const listItem = document.createElement('li');
         listItem.textContent = `${key}: ${value}`;
         dataElement.appendChild(listItem);
