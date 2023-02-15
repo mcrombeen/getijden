@@ -36,19 +36,19 @@ xhr.onload = function() {
     value += ' hr';
   }
   else if (key === 'm TAW') {
-    key = 'M TAW ';
+    key = 'm TAW ';
     value += ' mtr';
   }
-  else if (key === 'm TAW_1') {
-    key = 'M TAW ';
+  else if (key === 'm TAW__1') {
+    key = 'm TAW ';
     value += ' mtr';
   }
- else if (key === 'm TAW_2') {
-    key = 'M TAW ';
+ else if (key === 'm TAW__2') {
+    key = 'm TAW ';
     value += ' mtr';
   }
-  else if (key === 'm TAW_3') {
-    key = 'M TAW ';
+  else if (key === 'm TAW__3') {
+    key = 'm TAW ';
     value += ' mtr';
   }
   
