@@ -20,11 +20,19 @@ xhr.onload = function() {
       if (key !== 'Date') {
         let value = currentData[key];
     if (key === 'HW1') {
-    key = 'Eerste Hoogwater';
+    key = 'Eerste Hoogwater ';
     value += ' hr';
   }
   if (key === 'HW2') {
-    key = 'Tweede Hoogwater';
+    key = 'Tweede Hoogwater ';
+    value += ' hr';
+  }
+  if (key === 'LW1') {
+    key = 'Eerste Laagwater ';
+    value += ' hr';
+  }
+  if (key === 'LW2') {
+    key = 'Tweede Laagwater ';
     value += ' hr';
   }
  
