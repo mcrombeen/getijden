@@ -20,14 +20,14 @@ xhr.onload = function() {
       if (key !== 'Date') {
         let value = currentData[key];
         if (key === 'HW1') {
-    key = 'hoogwater1';
-    value += ' hr';
+    key = 'Eerste Hoogwater';
+    value += ' hr'; } 
+        else if (key === 'HW2') {
+    key = 'Tweede Hoogwater';
+    value += ' hr'; }
+      
   }
-  if (key.match(/^(HW|LW)\d$/)) {
-    value += ' hr';
-  } else {
-    value += ' mtr';
-  }
+  
         const listItem = document.createElement('li');
         listItem.textContent = `${key}: ${value}`;
         dataElement.appendChild(listItem);
