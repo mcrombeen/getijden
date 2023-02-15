@@ -14,7 +14,7 @@ xhr.onload = function() {
     const currentData = data.find(obj => obj.Date === currentDate);
     // Update the date element
     const dateElement = document.getElementById('date');
-    dateElement.textContent = currentDate + ' (' + currentDay + ')';
+    dateElement.textContent = currentDay + currentDate;
     // Update the data elements
     const dataElement = document.getElementById('data');
     Object.keys(currentData).forEach(key => {
