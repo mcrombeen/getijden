@@ -19,15 +19,15 @@ xhr.onload = function() {
     Object.keys(currentData).forEach(key => {
       if (key !== 'Date') {
         let value = currentData[key];
-        if (key === 'HW1') {
-            key = 'Eerste Hoogwater';
-          value += ' hr'; } 
-        if (key === 'HW2') {
-            key = 'Tweede Hoogwater';
-            value += ' hr'; }
-           
-      
+    if (key === 'HW1') {
+    key = 'Eerste Hoogwater';
+    value += ' hr';
   }
+  if (key === 'HW2') {
+    key = 'Tweede Hoogwater';
+    value += ' hr';
+  }
+ 
   
         const listItem = document.createElement('li');
         listItem.textContent = `${key}: ${value}`;
