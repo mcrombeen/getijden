@@ -35,7 +35,7 @@ xhr.onload = function() {
         listItem.textContent = `${key}: ${value}`;
         dataElement.appendChild(listItem);
         dataElement.appendChild(document.createElement('br')); // Insert a line break after each list item
-      }
+      })
     });
   } else {
     console.error('Failed to load data from Antwerpen_Februari.json');
