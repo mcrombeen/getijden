@@ -9,12 +9,12 @@ xhr.onload = function() {
     const data = JSON.parse(xhr.responseText);
     // Find the current date in the data
     const currentDate = new Date().toLocaleDateString();
-    const currentDay = new Date().toLocaleDateString('en-US', {weekday: 'long'});
+    const currentDay = new Date().toLocaleDateString({weekday: 'long'});
 
     const currentData = data.find(obj => obj.Date === currentDate);
     // Update the date element
     const dateElement = document.getElementById('date');
-    dateElement.textContent = currentDay + currentDate;
+    dateElement.textContent = currentDay + (' ') + currentDate;
     // Update the data elements
     const dataElement = document.getElementById('data');
     Object.keys(currentData).forEach(key => {
