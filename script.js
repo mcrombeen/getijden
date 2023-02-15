@@ -1,7 +1,13 @@
-// Fetch the data from the JSON file
-fetch('Antwerpen_Februari.json')
-  .then(response => response.json())
-  .then(data => {
+// Create a new XMLHttpRequest object
+const xhr = new XMLHttpRequest();
+
+// Set up the request
+xhr.open('GET', 'Antwerpen_Februari.json');
+
+// Handle the response
+xhr.onload = function() {
+  if (xhr.status === 200) {
+    const data = JSON.parse(xhr.responseText);
     // Find the current date in the data
     const currentDate = new Date().toLocaleDateString();
     const currentData = data.find(obj => obj.Date === currentDate);
@@ -24,5 +30,11 @@ fetch('Antwerpen_Februari.json')
         dataElement.appendChild(document.createElement('br')); // Insert a line break after each list item
       }
     });
-  })
-  .catch(error => console.error(error));
+  } else {
+    console.error('Failed to load data from Antwerpen_Februari.json');
+  }
+};
+
+// Send the request
+xhr.send();
+
