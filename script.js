@@ -22,7 +22,7 @@ xhr.onload = function() {
         if (key === 'HW1')
  {
           value += ' hr';
-          key === 'hoogwater1';
+          key == 'hoogwater1';
         } else {
           value += ' mtr';
         }
