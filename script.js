@@ -3,7 +3,6 @@ const xhr = new XMLHttpRequest();
 
 // Set up the request
 xhr.open('GET', './Antwerpen_Februari.json');
-xhr.open('GET', 'https://github.com/mcrombeen/getijden/blob/1c2185a35410af26772329789a9518af11015ef3/Antwerpen_Februari.json');
 
 // Handle the response
 xhr.onload = function() {
