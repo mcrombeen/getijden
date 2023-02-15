@@ -22,9 +22,12 @@ xhr.onload = function() {
         if (key === 'HW1') {
     key = 'Eerste Hoogwater';
     value += ' hr'; } 
-        else if (key === 'HW2') {
+            else if (key === 'HW2') {
     key = 'Tweede Hoogwater';
     value += ' hr'; }
+           else {
+             value += ' hr'; }
+          
       
   }
   
