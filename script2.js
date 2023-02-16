@@ -49,7 +49,7 @@ xhr.onload = function() {
   key = 'Tweede Hoogwater'
   value += ' hr';
 }        
-  else if (key === 'LW1') {
+  else if (key === 'LW1' && value !== '-') {
   // Convert the value to a Date object
   const time = new Date(`1970-01-01T${value}:00`);
   // Add 1 hour and 15 minutes
