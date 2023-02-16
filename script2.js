@@ -67,7 +67,7 @@ xhr.onload = function() {
   // Convert the value to a Date object
   const time = new Date(`1970-01-01T${value}:00`);
   // Add 1 hour and 15 minutes
-  time.setHours(time.getHours() + 4);
+  time.setHours(time.getHours(hour: '2-digit') + 4);
   time.setMinutes(time.getMinutes() + 22);
   // Format the new value as a string
   value = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
