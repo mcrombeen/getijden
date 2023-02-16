@@ -55,7 +55,7 @@ xhr.onload = function() {
     
   const time = new Date(`1970-01-01T${value}:00`);
     let hour = value;
-if (value.length === 1) {
+if (value.length === 4) {
   hour = '0' + hour; // prepend a zero to the hour value if it has only one digit
 }
   // Add 1 hour and 15 minutes
