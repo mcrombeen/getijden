@@ -7,19 +7,25 @@ xhr.onload = function() {
   if (xhr.status === 200) {
     const data = JSON.parse(xhr.responseText);
     // Find the current date in the data
-const currentDate = new Date().toLocaleDateString();
-const currentDay = new Date().toLocaleDateString('nl-NL', { weekday: 'long' });
+    const currentDate = new Date().toLocaleDateString();
+    const currentDay = new Date().toLocaleDateString('nl-NL', {weekday: 'long'});
 
-// Find the current date in the data using different date formats
-const currentData = data.find(obj => {
-const objDate = new Date(obj.Date);
-const objDateString = objDate.toLocaleDateString();
-return objDateString === currentDate || objDateString === currentDay;
-});
+    const currentData = data.find(obj => obj.Date == currentDate);
+    // Update the date element
 
-// Update the date element
-const dateElement = document.getElementById('date');
-dateElement.textContent = currentDay + ' ' + currentDate;
+    
+          
+            
+    
+
+          
+    
+    
+  
+    const dateElement = document.getElementById('date');
+    dateElement.textContent = currentDay + (' ') + currentDate;
+    // Update the data elements
+    const dataElement = document.getElementById('data');
     Object.keys(currentData).forEach(key => {
       if (key !== 'Date') {
         let value = currentData[key];
