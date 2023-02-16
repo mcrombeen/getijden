@@ -45,7 +45,7 @@ xhr.onload = function() {
   key = 'Tweede Hoogwater';
   value += ' hr';
 }
-  else if (key ==='HW2' && value == '-' {
+  else if (key ==='HW2' && value == '-') {
   key = 'Tweede Hoogwater'
   value += ' hr';
 }        
