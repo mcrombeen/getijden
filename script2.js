@@ -30,6 +30,7 @@ xhr.onload = function() {
   value = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   // Update the key
   key = 'Eerste Hoogwater';
+  value += ' hr';
 }
 
   else if (key === 'HW2') {
