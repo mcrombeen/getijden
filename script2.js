@@ -18,7 +18,7 @@ xhr.onload = function() {
     // Update the data elements
     const dataElement = document.getElementById('data');
     Object.keys(currentData).forEach(key => {
-      if (key !== 'Date') {
+      if (key !== 'Date' && key !== 'm TAW' && key !== 'm TAW_1' && key !== 'm TAW_2' && key !== 'm TAW_3') {
         let value = currentData[key];
    if (key === 'HW1') {
   // Convert the value to a Date object
