@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getijden</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Antwerpen</h1>
+    <p id="date"></p>
+    <ul id="data"></ul>
+    <script src="script.js"></script>
+  </body>
+</html>
+
