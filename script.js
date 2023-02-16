@@ -10,7 +10,7 @@ xhr.onload = function() {
     const currentDate = new Date().toLocaleDateString();
     const currentDay = new Date().toLocaleDateString('nl-NL', {weekday: 'long'});
 
-    const currentData = data.find(obj => obj.Date === currentDate);
+    const currentData = data.find(obj => obj.Date == currentDate);
     // Update the date element
 
     
