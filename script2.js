@@ -33,7 +33,7 @@ xhr.onload = function() {
   value += ' hr';
 }
 
-  else if (key === 'HW2') {
+  else if (key === 'HW2' && value !== '-') {
   // Convert the value to a Date object
   const time = new Date(`1970-01-01T${value}:00`);
   // Add 1 hour and 15 minutes
