@@ -20,6 +20,7 @@ xhr.onload = function() {
     Object.keys(currentData).forEach(key => {
       if (key !== 'Date' && key !== 'm TAW' && key !== 'm TAW__1' && key !== 'm TAW__2' && key !== 'm TAW__3') {
         let value = currentData[key];
+        
    if (key === 'HW1') {
   // Convert the value to a Date object
   const time = new Date(`1970-01-01T${value}:00`);
@@ -56,7 +57,7 @@ xhr.onload = function() {
   time.setHours(time.getHours() + 4);
   time.setMinutes(time.getMinutes() + 22);
   // Format the new value as a string
-  value = time.toLocaleTimeString([], { minute: '2-digit' });
+  value = time.toLocaleTimeString([], { hour, minute: '2-digit' });
   // Update the key
   key = 'Eerste Laagwater';
   value += ' hr';
