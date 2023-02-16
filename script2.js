@@ -53,7 +53,7 @@ xhr.onload = function() {
   else if (key === 'LW1' && value !== '-') {
   // Convert the value to a Date object
     if (value.length === 4) {
-  '0' += value; // prepend a zero to the hour value if it has only one digit
+  value.padStart(5, '0'); // prepend a zero to the hour value if it has only one digit
 }
   const time = new Date(`1970-01-01T${value}:00`);
     
