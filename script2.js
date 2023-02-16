@@ -52,6 +52,10 @@ xhr.onload = function() {
 }        
   else if (key === 'LW1' && value !== '-') {
   // Convert the value to a Date object
+    let hour = value;
+if (value.length === 1) {
+  hour = '0' + hour; // prepend a zero to the hour value if it has only one digit
+}
   const time = new Date(`1970-01-01T${value}:00`);
   // Add 1 hour and 15 minutes
   time.setHours(time.getHours() + 4);
