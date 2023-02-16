@@ -7,8 +7,8 @@ xhr.onload = function() {
   if (xhr.status === 200) {
     const data = JSON.parse(xhr.responseText);
     // Find the current date in the data
-    const currentDate = new Date().toLocaleDateString('fr-FR');
-    const currentDay = new Date().toLocaleDateString('nl-BE', {weekday: 'long'});
+    const currentDate = new Date().toLocaleDateString('nl-NL');
+    const currentDay = new Date().toLocaleDateString('nl-NL', {weekday: 'long'});
 
     const currentData = data.find(obj => obj.Date === currentDate);
     // Update the date element
