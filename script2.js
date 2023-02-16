@@ -57,7 +57,8 @@ xhr.onload = function() {
   time.setHours(time.getHours() + 4);
   time.setMinutes(time.getMinutes() + 22);
   // Format the new value as a string
-  value = time.toLocaleTimeString([], { hour, minute: '2-digit' });
+  value = time.toLocaleTimeString([], { hour: 'numeric',
+  hour12: false, minute: '2-digit' });
   // Update the key
   key = 'Eerste Laagwater';
   value += ' hr';
