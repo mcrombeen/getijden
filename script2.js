@@ -24,8 +24,8 @@ xhr.onload = function() {
   // Convert the value to a Date object
   const time = new Date(`1970-01-01T${value}:00`);
   // Add 1 hour and 15 minutes
-  time.setHours(time.getHours() + 1);
-  time.setMinutes(time.getMinutes() + 15);
+  time.setHours(time.getHours() + 3);
+  time.setMinutes(time.getMinutes() + 20);
   // Format the new value as a string
   value = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   // Update the key
@@ -34,17 +34,41 @@ xhr.onload = function() {
 }
 
   else if (key === 'HW2') {
-    key = 'Tweede Hoogwater ';
-    value += ' hr';
-  }
+  // Convert the value to a Date object
+  const time = new Date(`1970-01-01T${value}:00`);
+  // Add 1 hour and 15 minutes
+  time.setHours(time.getHours() + 3);
+  time.setMinutes(time.getMinutes() + 20);
+  // Format the new value as a string
+  value = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  // Update the key
+  key = 'Tweede Hoogwater';
+  value += ' hr';
+}
   else if (key === 'LW1') {
-    key = 'Eerste Laagwater ';
-    value += ' hr';
-  }
+  // Convert the value to a Date object
+  const time = new Date(`1970-01-01T${value}:00`);
+  // Add 1 hour and 15 minutes
+  time.setHours(time.getHours() + 4);
+  time.setMinutes(time.getMinutes() + 22);
+  // Format the new value as a string
+  value = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  // Update the key
+  key = 'Eerste Laagwater';
+  value += ' hr';
+}
   else if (key === 'LW2') {
-    key = 'Tweede Laagwater ';
-    value += ' hr';
-  }
+  // Convert the value to a Date object
+  const time = new Date(`1970-01-01T${value}:00`);
+  // Add 1 hour and 15 minutes
+  time.setHours(time.getHours() + 4);
+  time.setMinutes(time.getMinutes() + 22);
+  // Format the new value as a string
+  value = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  // Update the key
+  key = 'Tweede Laagwater';
+  value += ' hr';
+}
  // else if (key === 'm TAW') {
    // key = 'm TAW ';
    // value += ' mtr';
