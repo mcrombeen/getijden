@@ -6,13 +6,13 @@ body {
 
 h1 {
   text-align: center;
-  margin: 0;
+  margin: 5px;
 }
 
 #date {
   text-align: center;
   font-style: italic;
-  margin: 0;
+  margin: 5px;
 }
 
 ul {
