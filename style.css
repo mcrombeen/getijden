@@ -31,6 +31,8 @@ li {
   box-shadow: 2px 2px 5px rgba(152, 102, 145, 0.95);
 }
 .navigation-menu {
+  max-width: 600px;
+  flex-wrap: wrap;
   list-style-type: none;
   margin: 20;
   padding: 20;
@@ -38,6 +40,7 @@ li {
 }
 
 .navigation-menu li {
+  flex-basis: 16%;
   text-align: center;
   width: 200px;
   padding: 20;
