@@ -36,6 +36,7 @@ li {
 }
 
 .navigation-menu li {
+  width: 100px;
   margin-right: 0.5rem;
   padding: 20;
   background-color: #f5f5f5;
