@@ -34,15 +34,15 @@ li {
   max-width: 1200px;
   flex-wrap: wrap;
   list-style-type: none;
-  margin: 20;
-  padding: 20;
+  
+  
   display: flex;
 }
 
 .navigation-menu li {
   flex-basis: 16%;
   text-align: center;
-  padding: 20;
+  
   background-color: #f5f5f5;
   border-radius: 5px;
   box-shadow: 2px 2px 5px rgba(152, 102, 145, 0.95);
