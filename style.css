@@ -41,6 +41,11 @@ li {
   justify-content: center;
 }
 
+.container h1 {
+  text-shadow: 2px 2px 5px rgba(152, 102, 145, 0.95);
+}
+
+
 .navigation-menu {
   border: 10px;
   max-width: 1200px;
