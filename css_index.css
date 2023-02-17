@@ -18,8 +18,8 @@ h1 {
 /* Set list style and remove padding and margin for ul */
 ul {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  padding: 20;
+  margin: 100;
 }
 
 /* Style the li elements with padding, background color, border radius, box shadow, and margin */
