@@ -40,7 +40,7 @@ li {
 }
 
 .navigation-menu li {
-  flex-basis: 25%;
+  flex-basis: 5%;
   text-align: center;
   padding: 10px;
   margin: 5px;
