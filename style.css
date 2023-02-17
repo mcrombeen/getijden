@@ -41,6 +41,7 @@ li {
 }
 
 .navigation-menu {
+  border: 10px;
   max-width: 1200px;
   flex-wrap: wrap;
   list-style-type: none;
