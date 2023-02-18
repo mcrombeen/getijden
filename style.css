@@ -16,7 +16,6 @@ h1 {
 }
 
 ul {
-  position: relative; /* Set the li element as the reference position */
   list-style-type: none;
   padding: 0;
   margin: 10;
@@ -35,7 +34,7 @@ li {
   box-shadow: 2px 2px 5px rgba(152, 102, 145, 0.95);
 }
 
-ul img {
+.container img {
   position: absolute; /* Position the image relative to the li element */
   top: 0;
   left: 0;
@@ -44,6 +43,7 @@ ul img {
 }
 
 .container {
+  position: relative; /* Set the li element as the reference position */
   margin: 10px;
   display: flex;
   flex-direction: column;
