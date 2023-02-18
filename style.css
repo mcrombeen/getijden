@@ -22,6 +22,7 @@ ul {
 }
 
 li {
+  position: relative; /* Set the li element as the reference position */
   text-align: center;
   width: 400px;
   padding: 10px;
@@ -31,6 +32,14 @@ li {
   margin-left: 150px;
   margin-right: 150px;
   box-shadow: 2px 2px 5px rgba(152, 102, 145, 0.95);
+}
+
+li img {
+  position: absolute; /* Position the image relative to the li element */
+  top: 0;
+  left: 0;
+  z-index: 1; /* Set the image on top of the other elements in the li element */
+  opacity: 0.8; /* Optional: adjust the opacity of the image */
 }
 
 .container {
