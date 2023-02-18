@@ -39,7 +39,7 @@ li {
   top: 0;
   left: 0;
   z-index: 1; /* Set the image on top of the other elements in the li element */
-  opacity: 0.6; /* Optional: adjust the opacity of the image */
+  opacity: 0.45; /* Optional: adjust the opacity of the image */
 }
 
 .container {
