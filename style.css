@@ -1,4 +1,5 @@
 body {
+  position: relative; /* Set the li element as the reference position */
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -34,7 +35,7 @@ li {
   box-shadow: 2px 2px 5px rgba(152, 102, 145, 0.95);
 }
 
-.container img {
+body img {
   width: 100%;
   height: 100%;
   position: absolute; /* Position the image relative to the li element */
