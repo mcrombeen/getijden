@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-  background-image: url('https://raw.githubusercontent.com/mcrombeen/getijden/main/apple-touch-icon.png');
+  background-image: url('/handjes.jpeg');
   background-size: 48px 48px; /* set the size of the icon */
   background-repeat: no-repeat;
   background-position: left center;
