@@ -23,6 +23,7 @@ h1 {
 }
 
 ul {
+  position: relative;
   list-style-type: none;
   padding: 0;
   margin: 10;
