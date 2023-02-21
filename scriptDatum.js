@@ -1,69 +1,53 @@
-// Get the HTML elements
-const dateInput = document.getElementById('date');
-const dateElement = document.getElementById('date-display');
-const dataElement = document.getElementById('data');
+// Add an event listener to the date picker
+document.getElementById('datePicker').addEventListener('change', function() {
+  // Get the selected date
+  const selectedDate = this.value;
 
-// Add an event listener to the date input
-dateInput.addEventListener('change', function() {
-  // Get the selected date value
-  const selectedDate = dateInput.value;
-  // Fetch the data for the selected date
-  fetch(`https://raw.githubusercontent.com/mcrombeen/getijden/main/Antwerpen_${selectedDate}.json`)
-    .then(response => response.json())
-    .then(data => {
-      // Find the selected date in the data
-      const currentDate = new Date(selectedDate).toLocaleDateString({month: 'long'});
-      const currentDay = new Date(selectedDate).toLocaleDateString('nl-NL', {weekday: 'long'});
-      const currentData = data.find(obj => obj.Date == currentDate);
+  // Create a new XMLHttpRequest object
+  const xhr = new XMLHttpRequest();
+  // Set up the request
+  xhr.open('GET', `https://raw.githubusercontent.com/mcrombeen/getijden/main/Antwerpen_Februari.json?date=${selectedDate}`);
+  // Handle the response
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      const data = JSON.parse(xhr.responseText);
       // Update the date element
-      dateElement.textContent = currentDay + (' ') + currentDate;
-      // Clear the previous data elements
-      dataElement.innerHTML = '';
+      const dateElement = document.getElementById('date');
+      dateElement.textContent = selectedDate;
       // Update the data elements
-      Object.keys(currentData).forEach(key => {
-        if (key !== 'Date') {
-          let value = currentData[key];
-          if (key === 'HW1') {
-            key = 'Eerste Hoogwater ';
-            value += ' hr';
-          }
-          else if (key === 'HW2') {
-            key = 'Tweede Hoogwater ';
-            value += ' hr';
-          }
-          else if (key === 'LW1') {
-            key = 'Eerste Laagwater ';
-            value += ' hr';
-          }
-          else if (key === 'LW2') {
-            key = 'Tweede Laagwater ';
-            value += ' hr';
-          }
-          else if (key === 'm TAW') {
-            key = 'm TAW ';
-            value += ' mtr';
-          }
-          else if (key === 'm TAW__1') {
-            key = 'm TAW ';
-            value += ' mtr';
-          }
-          else if (key === 'm TAW__2') {
-            key = 'm TAW ';
-            value += ' mtr';
-          }
-          else if (key === 'm TAW__3') {
-            key = 'm TAW ';
-            value += ' mtr';
-          }
-          const listItem = document.createElement('li');
-          listItem.textContent = `${key}: ${value}`;
-          dataElement.appendChild(listItem);
-          dataElement.appendChild(document.createElement('br')); // Insert a line break after each list item
+      const dataElement = document.getElementById('data');
+      dataElement.innerHTML = ""; // clear previous data
+      Object.keys(data).forEach(key => {
+        let value = data[key];
+        if (key === 'HW1') {
+          key = 'Eerste Hoogwater ';
+          value += ' hr';
         }
+        else if (key === 'HW2') {
+          key = 'Tweede Hoogwater ';
+          value += ' hr';
+        }
+        else if (key === 'LW1') {
+          key = 'Eerste Laagwater ';
+          value += ' hr';
+        }
+        else if (key === 'LW2') {
+          key = 'Tweede Laagwater ';
+          value += ' hr';
+        }
+        else if (key === 'm TAW' || key === 'm TAW__1' || key === 'm TAW__2' || key === 'm TAW__3') {
+          key = 'm TAW ';
+          value += ' mtr';
+        }
+        const listItem = document.createElement('li');
+        listItem.textContent = `${key}: ${value}`;
+        dataElement.appendChild(listItem);
       });
-    })
-    .catch(error => {
-      console.error(`Failed to load data from Antwerpen_${selectedDate}.json`);
-      console.error(error);
-    });
+    } else {
+      console.error(`Failed to load data from Antwerpen_Februari.json?date=${selectedDate}`);
+    }
+  };
+  // Send the request
+  xhr.send();
 });
+
