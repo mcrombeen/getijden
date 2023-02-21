@@ -48,7 +48,7 @@ body img {
   position: absolute; /* Position the image relative to the li element */
   top: 10%;
   left: 0;
-  z-index: 1; /* Set the image on top of the other elements in the li element */
+  z-index: 0; /* Set the image on top of the other elements in the li element */
   opacity: 0.45; /* Optional: adjust the opacity of the image */
 }
 
