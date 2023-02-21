@@ -1,7 +1,7 @@
 // Create a new XMLHttpRequest object
 const xhr = new XMLHttpRequest();
 // Set up the request
-xhr.open('GET', 'Antwerpen_Februari.json');
+xhr.open('GET', 'https://raw.githubusercontent.com/mcrombeen/getijden/main/Antwerpen_Februari.json');
 // Handle the response
 xhr.onload = function() {
   if (xhr.status === 200) {
