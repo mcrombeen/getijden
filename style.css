@@ -1,4 +1,5 @@
 body {
+  height:100%;
   position: relative; /* Set the li element as the reference position */
   font-family: Arial, sans-serif;
   margin: 0;
@@ -17,6 +18,7 @@ h1 {
 }
 
 ul {
+  height:100%;
   list-style-type: none;
   padding: 0;
   margin: 10;
