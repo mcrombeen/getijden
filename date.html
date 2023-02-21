@@ -1,70 +1,39 @@
-// Get the HTML elements
-const dateInput = document.getElementById('date');
-const dateElement = document.getElementById('date-display');
-const dataElement = document.getElementById('data');
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8">
+    <title>Antwerpen</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/mcrombeen/getijden/main/favicon-16x16.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="scriptDatum.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+   
 
-// Add an event listener to the date input
-dateInput.addEventListener('change', function() {
-  // Get the selected date value
-  const selectedDate = dateInput.value;
-  // Fetch the data for the selected date
-  fetch(`https://raw.githubusercontent.com/mcrombeen/getijden/main/Antwerpen_${selectedDate}.json`)
-    .then(response => response.json())
-    .then(data => {
-      // Find the selected date in the data
-      const currentDate = new Date(selectedDate).toLocaleDateString({month: 'long'});
-      const currentDay = new Date(selectedDate).toLocaleDateString('nl-NL', {weekday: 'long'});
-      const currentData = data.find(obj => obj.Date == currentDate);
-      // Update the date element
-      dateElement.textContent = currentDay + (' ') + currentDate;
-      // Clear the previous data elements
-      dataElement.innerHTML = '';
-      // Update the data elements
-      Object.keys(currentData).forEach(key => {
-        if (key !== 'Date') {
-          let value = currentData[key];
-          if (key === 'HW1') {
-            key = 'Eerste Hoogwater ';
-            value += ' hr';
-          }
-          else if (key === 'HW2') {
-            key = 'Tweede Hoogwater ';
-            value += ' hr';
-          }
-          else if (key === 'LW1') {
-            key = 'Eerste Laagwater ';
-            value += ' hr';
-          }
-          else if (key === 'LW2') {
-            key = 'Tweede Laagwater ';
-            value += ' hr';
-          }
-          else if (key === 'm TAW') {
-            key = 'm TAW ';
-            value += ' mtr';
-          }
-          else if (key === 'm TAW__1') {
-            key = 'm TAW ';
-            value += ' mtr';
-          }
-          else if (key === 'm TAW__2') {
-            key = 'm TAW ';
-            value += ' mtr';
-          }
-          else if (key === 'm TAW__3') {
-            key = 'm TAW ';
-            value += ' mtr';
-          }
-          const listItem = document.createElement('li');
-          listItem.textContent = `${key}: ${value}`;
-          dataElement.appendChild(listItem);
-          dataElement.appendChild(document.createElement('br')); // Insert a line break after each list item
-        }
-      });
-    })
-    .catch(error => {
-      console.error(`Failed to load data from Antwerpen_${selectedDate}.json`);
-      console.error(error);
-    });
-});
+    <img src="https://raw.githubusercontent.com/mcrombeen/getijden/main/waterCropped2.png
+">
+    <header>
+      <nav>
+        <label for="date">Select a date:</label>
+<input type="date" id="date" name="date">
+        <ul class="navigation-menu">
+          <li><a href="Vlissingen.html">Vlissingen</a></li>
+          <li><a href="Terneuzen.html">Terneuzen</a></li>
+          <li><a href="Hansweert.html">Hansweert</a></li>
+          <li><a href="Wintam.html">Wintam</a></li>
+          <li><a href="Temse.html">Temse</a></li>
+          <li><a href="Melle.html">Melle</a></li>
+          </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <h1>Antwerpen</h1>
+      <p id="date"></p>
+      <ul id="data"></ul>
+      
+    </div>
+  </body>
+</html>
+
 
