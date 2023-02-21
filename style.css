@@ -7,6 +7,10 @@ body {
 }
 
 h1 {
+  background-image: url('path/to/icon.png');
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px; /* adjust the padding to make room for the icon */
   text-align: center;
   margin: 5px;
 }
