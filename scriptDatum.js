@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     };
     xhr.send();
+    console.log(datePicker.value);
   });
 });
 
