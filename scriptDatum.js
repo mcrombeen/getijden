@@ -2,21 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const xhr = new XMLHttpRequest();
   const datePicker = document.getElementById('datepicker');
   datePicker.addEventListener('input', function() {
-    xhr.open('GET', `https://raw.githubusercontent.com/mcrombeen/getijden/main/Antwerpen.json`);
+    const selectedDate = new Date(datePicker.value);
+    const formattedDate = selectedDate.toLocaleDateString('en-GB', {day: '2-digit', month: '2-digit', year: 'numeric'});
+    xhr.open('GET', `https://raw.githubusercontent.com/mcrombeen/getijden/main/Antwerpen_${formattedDate}.json`);
     xhr.onload = function() {
       if (xhr.status === 200) {
         const data = JSON.parse(xhr.responseText);
-        const selectedDate = new Date(datePicker.value);
         const currentDate = selectedDate.toLocaleDateString({month: 'long'});
         const currentDay = selectedDate.toLocaleDateString('nl-NL', {weekday: 'long'});
-        const currentData = data.find(obj => {
-          const dateStr = obj.Date;
-          const [day, month, year] = dateStr.split('/');
-          const date = new Date(`${year}-${month}-${day}`);
-          return date.getTime() === selectedDate.getTime();
-        });
+        const currentData = data.find(obj => obj.Date === formattedDate);
         const dateElement = document.getElementById('date');
-        dateElement.textContent = currentDay + (' ') + currentDate;
+        dateElement.textContent = currentDay + ' ' + currentDate;
         const dataElement = document.getElementById('data');
         dataElement.innerHTML = '';
         Object.keys(currentData).forEach(key => {
@@ -61,13 +57,14 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
       } else {
-        console.error('Failed to load data from Antwerpen.json');
+        console.error(`Failed to load data from Antwerpen_${formattedDate}.json`);
       }
     };
     xhr.send();
     console.log(datePicker.value);
   });
 });
+
 
 
 
